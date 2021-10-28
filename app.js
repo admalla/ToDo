@@ -9,25 +9,26 @@ tasksArray = [];
 displayTasks = () => {
   tasks.innerHTML = '';
   tasksArray.forEach((element, i) => {
-    if (element.text) {
-      tasks.innerHTML += `
-  <div class="box ${element.completed && 'completed'}">
-          <span class="text">${element.text}</span>
-          <div>
-            <input id='${i}' type="checkbox" ${element.completed && 'checked'}/>
-            <i id='${i}' class="fa fa-times" aria-hidden="true"></i>
+    tasks.innerHTML += `
+    <div class="box ${element.completed && 'completed'}">
+            <span class="text">${element.text}</span>
+            <div>
+              <input id='${i}' type="checkbox" ${element.completed && 'checked'}/>
+              <i id='${i}' class="fa fa-times" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
-  `;
-    } else return '';
+    `;
   });
   count();
+  console.log(tasksArray);
 };
 
 addBtn.addEventListener('click', () => {
-  tasksArray.push({ text: inp.value, completed: false });
-  inp.value = '';
-  displayTasks();
+  if (inp.value != '') {
+    tasksArray.push({ text: inp.value, completed: false });
+    inp.value = '';
+    displayTasks();
+  }
 });
 
 tasks.addEventListener('click', (e) => {
