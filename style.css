@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  background-color: gray;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.wrapper {
+  color: rgb(34, 33, 33);
+  display: flex;
+
+  justify-content: center;
+}
+
+.paper {
+  width: 400px;
+
+  border-radius: 20px;
+  box-shadow: 0 0 15px 0 #474a4a;
+  padding: 10px;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+#inp {
+  width: 90%;
+  font-size: 24px;
+  border-radius: 50px;
+  box-shadow: inset 0 0 5px 0 gray;
+  padding: 10px 15px;
+  border-top: 0;
+  border-left: 0;
+  box-sizing: border-box;
+}
+
+#inp:active,
+#inp:hover,
+#inp:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+._box {
+  display: flex;
+  box-sizing: border-box;
+  padding: 13px;
+}
+
+.task {
+  border: 1px solid rgb(179 219 213 / 79%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 0px rgb(179 219 213 / 79%), 0px 0px 10px 0px rgb(179 219 213 / 79%);
+  display: table;
+  padding: 7px 15px;
+  background-color: rgb(179 219 213 / 79%);
+  cursor: pointer;
+  width: 50%;
+
+  transition: box-shadow 0.3s linear;
+}
+
+._new {
+  padding: 10px;
+  background-color: rgb(179 219 213 / 79%);
+  margin: 0 30px;
+  border-radius: 5px;
+}
+
+._accepted {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.task:hover {
+  box-shadow: 0px 0px 2px 0px rgb(179 219 213 / 79%), 0px 0px 10px 5px rgb(179 219 213 / 79%);
+}
+
+.line {
+  margin-top: 30px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background-color: rgb(179 219 213 / 79%);
+  border-radius: 50px;
+  box-shadow: 0px 0px 2px 0px rgb(179 219 213 / 79%), 0px 0px 10px 0px rgb(179 219 213 / 79%);
+  border: 1px solid rgb(179 219 213 / 79%);
+  margin-bottom: 10px;
+}
+
+.box input {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.box i {
+  cursor: pointer;
+}
+
+.text {
+  width: 250px;
+  height: 35px;
+  line-height: 33px;
+}
+
+.del {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.completed {
+  box-shadow: none;
+  border: 1px solid rgb(179 219 213 / 79%);
+  background-color: grey;
+}
