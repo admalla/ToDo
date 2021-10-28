@@ -4,9 +4,9 @@ let tasks = document.getElementById('tasks');
 let countNew = document.querySelector('._new');
 let countAccepted = document.querySelector('._accepted');
 
-tasksArray = [];
+let tasksArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
-displayTasks = () => {
+let displayTasks = () => {
   tasks.innerHTML = '';
   tasksArray.forEach((element, i) => {
     tasks.innerHTML += `
@@ -20,10 +20,13 @@ displayTasks = () => {
     `;
   });
   count();
-  console.log(tasksArray);
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
 };
 
+displayTasks();
+
 addBtn.addEventListener('click', () => {
+  console.log(1);
   if (inp.value != '') {
     tasksArray.push({ text: inp.value, completed: false });
     inp.value = '';
@@ -40,7 +43,7 @@ tasks.addEventListener('click', (e) => {
   displayTasks();
 });
 
-let count = () => {
+function count() {
   countAccepted.innerHTML = 0;
   countNew.innerHTML = 0;
   tasksArray.forEach((e) => {
@@ -50,4 +53,4 @@ let count = () => {
       countNew.innerHTML++;
     }
   });
-};
+}
